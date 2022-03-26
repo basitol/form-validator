@@ -21,6 +21,8 @@ body {
   margin: 0;
 
   .container {
+    width: 400px;
+
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
@@ -37,14 +39,30 @@ body {
 
   label {
     color: #777;
+    display: block;
+    margin-bottom: 5px;
   }
 
   input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+
     border: 2px solid #f0f0f0;
     border-radius: 4px;
+
+    &:focus {
+      outline: none;
+      border-color: #777;
+    }
   }
 
   .form-control {
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+
     &.success {
       input {
         border-color: var(--green);

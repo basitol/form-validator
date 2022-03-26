@@ -28,6 +28,7 @@ body {
 }
 
 body .container {
+  width: 400px;
   border-radius: 10px;
   background-color: #fff;
   -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
@@ -45,11 +46,28 @@ body .container {
 
 .form label {
   color: #777;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .form input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
   border: 2px solid #f0f0f0;
   border-radius: 4px;
+}
+
+.form input:focus {
+  outline: none;
+  border-color: #777;
+}
+
+.form .form-control {
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .form .form-control.success input {
