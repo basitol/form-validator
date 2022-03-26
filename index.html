@@ -4,35 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Style -->
+    <link rel="stylesheet" href="./style.css">
     <title>Document</title>
   </head>
 
   <body>
-    <div class="container">
-      <form action="">
+    <div class="container w-96">
+      <form action="" class="form">
         <h2>Register With Us</h2>
-        <div class="form-control">
-          <label for="username" class="form-control">Username</label>
-          <input type="text" id="username" placeholder="Enter Username">
+        <div class="form-control pb-5 mb-2.5 relative">
+          <label for="username" class="mb-1.5 block">Username</label>
+          <input type="text" id="username" placeholder="Enter Username" class="block text-sm focus:outline-none focus:border-gray-400">
           <small>Error Message</small>
         </div>
-        <div class="Email">
-          <label for="username" class="form-control">Email</label>
-          <input type="text" id="email" placeholder="Enter Email">
+        <div class="form-control pb-5 mb-2.5 relative">
+          <label for="username" class="mb-1.5 block">Email</label>
+          <input type="text" id="email" placeholder="Enter Email" class="block text-sm focus:outline-none focus:outline-none focus:border-gray-400">
           <small>Error Message</small>
         </div>
-        <div class="form-control">
-          <label for="password" class="form-control">password</label>
-          <input type="password" id="password" placeholder="Enter Password">
+        <div class="form-control pb-5 mb-2.5 relative">
+          <label for="password" class="mb-1.5 block">password</label>
+          <input type="password" id="password" placeholder="Enter Password" class="block text-sm focus:outline-none focus:outline-none focus:border-gray-400">
           <small>Error Message</small>
         </div>
-        <div class="form-control">
-          <label for="password2" class="form-control">Confirm Password</label>
-          <input type="password" id="password2" placeholder="Confirm Password">
+        <div class="form-control pb-5 mb-2.5 relative">
+          <label for="password2" class="mb-1.5 block">Confirm Password</label>
+          <input type="password" id="password2" placeholder="Confirm Password" class="block text-sm focus:outline-none focus:outline-none focus:border-gray-400">
           <small>Error Message</small>
         </div>
         <button type="submit">Submit</button>
       </form>
     </div>
+
+      <script src="https://cdn.tailwindcss.com"></script>
   </body>
 </html>
