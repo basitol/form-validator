@@ -3,7 +3,6 @@ const userName = document.querySelector("#username");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const password2 = document.querySelector("#password2");
-const inn = document.querySelector(".inn");
 
 // Show input error message
 const showError = (input, message) => {
@@ -11,7 +10,6 @@ const showError = (input, message) => {
   formControl.className = "form-control error";
   const small = formControl.querySelector("small");
   small.innerText = message;
-  //   inn.innerText = message;
 };
 
 // Show success outline
