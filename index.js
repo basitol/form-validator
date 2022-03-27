@@ -21,10 +21,15 @@ const showSuccess = (input) => {
 };
 
 // Check email is valid
-const isValidEmail = (email) => {
-  var rgx =
+const checkMail = (input) => {
+  const rgx =
     /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
-  return rgx.test(String(email).toLowerCase());
+  if (rgx.test(input.value)) {
+    showSuccess(input);
+  } else {
+    showError(input, "Email is not valid");
+  }
+  //   return rgx.test(String(email).toLowerCase());
 };
 
 // Check Required
@@ -38,6 +43,26 @@ const checkRequired = (inputArr) => {
   });
 };
 
+// Check length
+const checkLength = (input, min, max) => {
+  if (input.value.length < min) {
+    showError(input, `${getError(input)} must be at least ${min} characters`);
+  } else if (input.value.length > max) {
+    showError(input, `${getError(input)} must be less than ${max} characters`);
+  } else {
+    showSuccess(input);
+  }
+};
+
+// Check password
+const checkPassword = (input1, input2) => {
+  if (input1.value !== input2.value) {
+    showError(input2, "Password do not match");
+  } else {
+    showSuccess(input1, input2);
+  }
+};
+
 //Get field name
 const getError = (input) => {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
@@ -48,8 +73,8 @@ form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   checkRequired([userName, email, password, password2]);
-
-  if (!isValidEmail(email.value)) {
-    showError(email, "Email is not valid");
-  }
+  checkLength(userName, 3, 15);
+  checkLength(password, 6, 25);
+  checkMail(email);
+  checkPassword(password, password2);
 });
