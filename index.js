@@ -27,33 +27,29 @@ const isValidEmail = (email) => {
   return rgx.test(String(email).toLowerCase());
 };
 
+// Check Required
+const checkRequired = (inputArr) => {
+  inputArr.forEach(function (input) {
+    if (input.value.trim() === "") {
+      showError(input, `${getError(input)} is required`);
+    } else {
+      showSuccess(input);
+    }
+  });
+};
+
+//Get field name
+const getError = (input) => {
+  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+};
+
 // Event Listener
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  if (userName.value === "") {
-    showError(userName, "Username is required");
-  } else {
-    showSuccess(userName);
-  }
+  checkRequired([userName, email, password, password2]);
 
-  if (email.value === "") {
-    showError(email, "Email is required");
-  } else if (!isValidEmail(email.value)) {
+  if (!isValidEmail(email.value)) {
     showError(email, "Email is not valid");
-  } else {
-    showSuccess(email);
-  }
-
-  if (password.value === "") {
-    showError(password, "Password is required");
-  } else {
-    showSuccess(password);
-  }
-
-  if (password2.value === "") {
-    showError(password2, "Confirm Password");
-  } else {
-    showSuccess(password2);
   }
 });
